@@ -55,6 +55,8 @@ jobs:
         id: apple
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false -parallelism=1 planfile
+
+        
       - name: Configure AWS credenstials
         uses: aws-actions/configure-aws-credentials@v3
         with:
